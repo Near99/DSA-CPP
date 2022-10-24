@@ -55,7 +55,7 @@ int main()
 
     /**
      * Right Shift (>>), shifts bits to the right by kth position,
-     * can be used as division.
+     * can be used as division. Divide 2k.
      * e.g. 1 1 1 1 0
      *      0 1 1 1 1
      */
@@ -64,7 +64,7 @@ int main()
 
     /**
      * Left Shift (<<), shits bits to the left by kth position,
-     * can be used as multiplication.
+     * can be used as multiplication. Multiply 2^k.
      * e.g. 0 0 0 1 0 1
      *      1 0 1 0 0 0
      */

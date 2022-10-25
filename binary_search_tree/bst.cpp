@@ -37,13 +37,12 @@ private:
     void _insert(struct Node** root, int value)
     {
         if ((*root) == nullptr) {
-            cout << "called" << endl;
             struct Node* new_node = new struct Node;
             new_node->value = value;
             new_node->left = nullptr;
             new_node->right = nullptr;
             *root = new_node;
-        } else if (value < (*root)->left->value) {
+        } else if (value < (*root)->value) {
             _insert(&(*root)->left, value);
         } else {
             _insert(&(*root)->right, value);
@@ -69,7 +68,6 @@ int main()
     bst.insert(24);
     bst.insert(15);
     bst.insert(30);
-    // bst.traverse();
-    // bst.print();
+    bst.traverse();
     return 0;
 }

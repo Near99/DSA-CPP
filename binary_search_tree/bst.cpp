@@ -9,33 +9,19 @@ struct Node {
 };
 
 class BinarySearchTree {
+   public:
+    explicit BinarySearchTree() : _root(nullptr) {}
 
-public:
-    BinarySearchTree()
-    {
-        _root = nullptr;
-    }
+    void insert(int value) { _insert(&_root, value); }
 
-    void insert(int value)
-    {
-        _insert(&_root, value);
-    }
+    void traverse() { _traverse(_root); }
 
-    void traverse()
-    {
-        _traverse(_root);
-    }
+    void print() { cout << _root->value << endl; }
 
-    void print()
-    {
-        cout << _root->value << endl;
-    }
-
-private:
+   private:
     struct Node* _root;
 
-    void _insert(struct Node** root, int value)
-    {
+    void _insert(struct Node** root, int value) {
         if ((*root) == nullptr) {
             struct Node* new_node = new struct Node;
             new_node->value = value;
@@ -49,18 +35,15 @@ private:
         }
     }
 
-    void _traverse(struct Node* root)
-    {
-        if (root == nullptr)
-            return;
+    void _traverse(struct Node* root) {
+        if (root == nullptr) return;
         _traverse(root->left);
         cout << root->value << endl;
         _traverse(root->right);
     }
 };
 
-int main()
-{
+int main() {
     BinarySearchTree bst;
     bst.insert(50);
     bst.insert(20);

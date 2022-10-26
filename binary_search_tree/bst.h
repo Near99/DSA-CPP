@@ -19,9 +19,11 @@ class BinarySearchTree {
 
     void insert(int value) { _insert(&_root, value); }
 
+    void remove(int value) { _remove(&_root, value, nullptr); }
+
     void traverse() { _traverse(_root); }
 
-    void print() { std::cout << _root->value << std::endl; }
+    void print() { _print(_root, nullptr); }
 
     int count() { return _count(_root); }
 
@@ -32,6 +34,10 @@ class BinarySearchTree {
     int getHeight() { return _height(_root); }
 
     bool isValid() { return _valid(_root, INT_MIN, INT_MAX); }
+
+    bool contain(int value) { return _contain(_root, value); }
+
+    bool isEmpty() { return _empty(_root); }
 
    private:
     Node* _root;
@@ -46,6 +52,50 @@ class BinarySearchTree {
         } else {
             _insert(&(*root)->right, value);
         }
+    }
+
+    void _remove(Node** root, int target, Node* parent) {
+        if ((*root) == nullptr) return;
+        Node* d = (*root);
+        if ((*root)->value == target) {
+            if ((*root)->left == nullptr && (*root)->right == nullptr) {
+                (*root) = nullptr;
+            } else if ((*root)->left == nullptr || (*root)->right == nullptr) {
+                if ((*root)->left == nullptr)
+                    (*root) = (*root)->right;
+                else
+                    (*root) = (*root)->left;
+            } else if ((*root)->left != nullptr && (*root)->right != nullptr) {
+                (*root) = (*root)->left;
+                if ((*root)->right == nullptr) {
+                    (*root)->right = d->right;
+                } else {
+                    Node* r = (*root)->right;
+                    while (r->right != nullptr) {
+                        r = r->right;
+                    }
+                    r->right = d->right;
+                }
+            }
+            delete d;
+            return;
+        } else if ((*root)->value > target) {
+            _remove(&(*root)->left, target, *root);
+        } else {
+            _remove(&(*root)->right, target, *root);
+        }
+    }
+
+    void _print(Node* root, Node* parent) {
+        if (root == nullptr) return;
+        if (parent == nullptr) {
+            std::cout << "root node, no parent: " << root->value << std::endl;
+        } else {
+            std::cout << "Node's value: " << root->value
+                      << " parent's: " << parent->value << std::endl;
+        }
+        _print(root->left, root);
+        _print(root->right, root);
     }
 
     void _traverse(Node* root) {
@@ -81,6 +131,18 @@ class BinarySearchTree {
         return _valid(root->left, min, root->value) &&
                _valid(root->right, root->value, max);
     }
+
+    bool _contain(Node* root, int value) {
+        if (root == nullptr) return false;
+        if (value < root->value)
+            return _contain(root->left, value);
+        else if (value > root->value)
+            return _contain(root->right, value);
+        else
+            return true;
+    }
+
+    bool _empty(Node* root) { return root == nullptr; }
 };
 }  // namespace bst
 #endif

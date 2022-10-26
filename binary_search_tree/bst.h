@@ -78,7 +78,6 @@ class BinarySearchTree {
                 }
             }
             delete d;
-            return;
         } else if ((*root)->value > target) {
             _remove(&(*root)->left, target, *root);
         } else {
@@ -92,7 +91,7 @@ class BinarySearchTree {
             std::cout << "root node, no parent: " << root->value << std::endl;
         } else {
             std::cout << "Node's value: " << root->value
-                      << " parent's: " << parent->value << std::endl;
+                      << " parent: " << parent->value << std::endl;
         }
         _print(root->left, root);
         _print(root->right, root);

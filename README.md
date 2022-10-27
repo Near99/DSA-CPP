@@ -15,17 +15,17 @@
 
 ### :heavy_check_mark: Binary Search Tree Implementation.
 
-- [x] `insert()`            - insert a new node in the BST.
-- [x] `remove()`            - remove a node from the BST.
-- [x] `traverse()`          - traverse BST in preorder.
-- [x] `print()`             - print all nodes and its parents info.
-- [x] `count()`             - count of nodes.
-- [x] `getMax()`            - max number in the BST.
-- [x] `getMin()`            - min number in the BST.
-- [x] `getHeight()`         - height of the BST.
-- [x] `isValid()`           - if the BST is valid.
-- [x] `contain()`           - if contain the target element.
-- [x] `isEmpty()`           - if the tree is empty.
+- [x] `BinarySearchTree::insert()`            - insert a new node in the BST.
+- [x] `BinarySearchTree::remove()`            - remove a node from the BST.
+- [x] `BinarySearchTree::traverse()`          - traverse BST in preorder.
+- [x] `BinarySearchTree::print()`             - print all nodes and its parents info.
+- [x] `BinarySearchTree::count()`             - count of nodes.
+- [x] `BinarySearchTree::getMax()`            - max number in the BST.
+- [x] `BinarySearchTree::getMin()`            - min number in the BST.
+- [x] `BinarySearchTree::getHeight()`         - height of the BST.
+- [x] `BinarySearchTree::isValid()`           - if the BST is valid.
+- [x] `BinarySearchTree::contain()`           - if contain the target element.
+- [x] `BinarySearchTree::isEmpty()`           - if the tree is empty.
 
 ### BST algorithm practice questions:
 

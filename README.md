@@ -2,6 +2,10 @@
 
 ## Array
 
+### :heavy_check_mark: Dynamic Array Implementation.
+
+- [x] Well, I don't think I will implement another Vector in CPP, but let's see ;).
+
 ### Array algorithm practice questions:
 
 - [x] Is Unique.

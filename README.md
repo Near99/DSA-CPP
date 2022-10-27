@@ -17,7 +17,7 @@
 
 - [x] `BinarySearchTree::insert()`            - insert a new node in BST.
 - [x] `BinarySearchTree::remove()`            - remove a node from BST.
-- [x] `BinarySearchTree::traverse()`          - traverse BST in preorder.
+- [x] `BinarySearchTree::traverse()`          - traverse BST (inorder).
 - [x] `BinarySearchTree::print()`             - print all nodes and its parents info.
 - [x] `BinarySearchTree::count()`             - count of nodes.
 - [x] `BinarySearchTree::getMax()`            - max number in BST.

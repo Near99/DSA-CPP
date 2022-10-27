@@ -19,7 +19,7 @@ class BinarySearchTree {
 
     void insert(int value) { _insert(&_root, value); }
 
-    void remove(int value) { _remove(&_root, value, nullptr); }
+    void remove(int value) { _remove_elegant(&_root, value); }
 
     void traverse() { _traverse(_root); }
 
@@ -32,6 +32,8 @@ class BinarySearchTree {
     int getMin() { return _min(_root); }
 
     int getHeight() { return _height(_root); }
+
+    int successor(int value) { return _successor(_root, value); }
 
     bool isValid() { return _valid(_root, INT_MIN, INT_MAX); }
 
@@ -54,7 +56,7 @@ class BinarySearchTree {
         }
     }
 
-    void _remove(Node** root, int target, Node* parent) {
+    void _remove(Node** root, int target) {
         if ((*root) == nullptr) return;
         Node* d = (*root);
         if ((*root)->value == target) {
@@ -79,9 +81,33 @@ class BinarySearchTree {
             }
             delete d;
         } else if ((*root)->value > target) {
-            _remove(&(*root)->left, target, *root);
+            _remove(&(*root)->left, target);
         } else {
-            _remove(&(*root)->right, target, *root);
+            _remove(&(*root)->right, target);
+        }
+    }
+
+    void _remove_elegant(Node** root, int target) {
+        if ((*root) == nullptr) return;
+        if (target > (*root)->value) {
+            _remove_elegant(&(*root)->right, target);
+        } else if (target < (*root)->value) {
+            _remove_elegant(&(*root)->left, target);
+        } else {
+            Node* d = *root;
+            if ((*root)->left == nullptr && (*root)->right == nullptr) {
+                *root = nullptr;
+                delete d;
+            } else if ((*root)->left == nullptr || (*root)->right == nullptr) {
+                if ((*root)->left == nullptr)
+                    (*root) = (*root)->right;
+                else
+                    (*root) = (*root)->left;
+                delete d;
+            } else {
+                (*root)->value = _min((*root)->right);
+                _remove_elegant(&(*root)->right, (*root)->value);
+            }
         }
     }
 
@@ -122,6 +148,19 @@ class BinarySearchTree {
     int _height(Node* root) {
         if (root == nullptr) return 0;
         return 1 + MAX(_height(root->left), _height(root->right));
+    }
+
+    int _successor(Node* root, int key) {
+        // first to find the target;
+        if (root == nullptr) return -1;
+        if (root->value < key)
+            _successor(root->right, key);
+        else if (root->value > key)
+            _successor(root->left, key);
+        else {
+            // find target;
+        }
+        return 0;
     }
 
     bool _valid(Node* root, int min, int max) {

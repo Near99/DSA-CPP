@@ -33,7 +33,7 @@ class BinarySearchTree {
 
     int getHeight() { return _height(_root); }
 
-    int successor(int value) { return _successor(_root, value); }
+    int successor(int value) { return _successor(_root, _root, value); }
 
     bool isValid() { return _valid(_root, INT_MIN, INT_MAX); }
 
@@ -150,17 +150,28 @@ class BinarySearchTree {
         return 1 + MAX(_height(root->left), _height(root->right));
     }
 
-    int _successor(Node* root, int key) {
-        // first to find the target;
-        if (root == nullptr) return -1;
-        if (root->value < key)
-            _successor(root->right, key);
-        else if (root->value > key)
-            _successor(root->left, key);
-        else {
-            // find target;
+    int _successor(Node* root, Node* t, int key) {
+        if (key > t->value) {
+            return _successor(root, t->right, key);
+        } else if (key < t->value) {
+            return _successor(root, t->left, key);
+        } else {
+            if (t->right != nullptr) {
+                return _min(t->right);
+            } else {
+                Node* s = nullptr;
+                Node* a = root;
+                while (a->value != key) {
+                    if (key < a->value) {
+                        s = a;
+                        a = a->left;
+                    } else {
+                        a = a->right;
+                    }
+                }
+                return s->value;
+            }
         }
-        return 0;
     }
 
     bool _valid(Node* root, int min, int max) {

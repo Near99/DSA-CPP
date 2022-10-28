@@ -50,7 +50,7 @@
 
 ### Blind 75:
 
-- [ ] Maximum Depth of Binary Tree.
+- [x] Maximum Depth of Binary Tree.
 - [ ] Same Tree.
 - [x] Invert Binary Tree.
 - [ ] Binary Tree Maximum Path Sum.

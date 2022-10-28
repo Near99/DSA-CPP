@@ -8,6 +8,7 @@
 namespace bst {
 
 enum TraversalMethod { bfs, dfs_inorder, dfs_preorder, dfs_postorder };
+   
 class Node {
    public:
     explicit Node(int val) : value(val), left(nullptr), right(nullptr) {}

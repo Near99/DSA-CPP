@@ -159,17 +159,17 @@ class BinarySearchTree {
             if (t->right != nullptr) {
                 return _min(t->right);
             } else {
-                Node* s = nullptr;
-                Node* a = root;
-                while (a->value != key) {
-                    if (key < a->value) {
-                        s = a;
-                        a = a->left;
+                Node* successor = nullptr;
+                Node* ancestor = root;
+                while (ancestor->value != key) {
+                    if (key < ancestor->value) {
+                        successor = ancestor;
+                        ancestor = ancestor->left;
                     } else {
-                        a = a->right;
+                        ancestor = ancestor->right;
                     }
                 }
-                return s->value;
+                return successor->value;
             }
         }
     }

@@ -1,10 +1,13 @@
 #include <iostream>
+#include <queue>
 
 #ifndef __BINARY_SEARCH_TREE__
 #define __BINARY_SEARCH_TREE__
 #define MAX(X, Y) ((X) > (Y) ? (X) : (Y))
 
 namespace bst {
+
+enum TraversalMethod { bfs, dfs_inorder, dfs_preorder, dfs_postorder };
 class Node {
    public:
     explicit Node(int val) : value(val), left(nullptr), right(nullptr) {}
@@ -21,7 +24,7 @@ class BinarySearchTree {
 
     void remove(int value) { _remove_elegant(&_root, value); }
 
-    void traverse() { _traverse(_root); }
+    void traverse(TraversalMethod m) { _traversal_controller(m, _root); }
 
     void print() { _print(_root, nullptr); }
 
@@ -123,11 +126,53 @@ class BinarySearchTree {
         _print(root->right, root);
     }
 
-    void _traverse(Node* root) {
+    void _traversal_controller(TraversalMethod m, Node* root) {
+        if (m == 0) _bfs(root);
+        if (m == 1) _dfs_inorder(root);
+        if (m == 2) _dfs_preorder(root);
+        if (m == 3) _dfs_postorder(root);
+    }
+
+    void _dfs_inorder(Node* root) {
         if (root == nullptr) return;
-        _traverse(root->left);
+        _dfs_inorder(root->left);
         std::cout << root->value << std::endl;
-        _traverse(root->right);
+        _dfs_inorder(root->right);
+    }
+
+    void _dfs_preorder(Node* root) {
+        if (root == nullptr) return;
+        std::cout << root->value << std::endl;
+        _dfs_preorder(root->left);
+        _dfs_preorder(root->right);
+    }
+
+    void _dfs_postorder(Node* root) {
+        if (root == nullptr) return;
+        _dfs_postorder(root->left);
+        _dfs_postorder(root->right);
+        std::cout << root->value << std::endl;
+    }
+
+    void _bfs(Node* root) {
+        if (root == nullptr) return;
+        std::queue<bst::Node*> queue;
+        queue.push(root);
+        while (queue.size()) {
+            Node* current = queue.front();
+            queue.pop();
+            std::cout << current->value << std::endl;
+            if (current->left && current->right) {
+                queue.push(current->left);
+                queue.push(current->right);
+            } else if (current->left && !current->right) {
+                queue.push(current->left);
+            } else if (!current->left && current->right) {
+                queue.push(current->right);
+            } else {
+                continue;
+            }
+        }
     }
 
     int _count(Node* root) {

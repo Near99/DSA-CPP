@@ -37,6 +37,7 @@
 - [x] `BinarySearchTree::getMax()`            - max number in BST.
 - [x] `BinarySearchTree::getMin()`            - min number in BST.
 - [x] `BinarySearchTree::getHeight()`         - height of the BST.
+- [x] `BinarySearchTree::successor()`         - find inorder successor.
 - [x] `BinarySearchTree::isValid()`           - if BST is valid.
 - [x] `BinarySearchTree::contain()`           - if contain the target element.
 - [x] `BinarySearchTree::isEmpty()`           - if tree is empty.

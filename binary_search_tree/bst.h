@@ -236,9 +236,9 @@ void bst::BinarySearchTree::_bfs(bst::Node* root) {
         if (current->left && current->right) {
             queue.push(current->left);
             queue.push(current->right);
-        } else if (current->left && !current->right) {
+        } else if (current->left) {
             queue.push(current->left);
-        } else if (!current->left && current->right) {
+        } else if (current->right) {
             queue.push(current->right);
         } else {
             continue;

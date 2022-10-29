@@ -24,13 +24,11 @@ class Solution {
                 } else {
                     t = "";
                 }
-            } else if (i == str.size() - 1 && t.size() != 0) {
-                std::cout << "called" << std::endl;
-                result.push_back(stoi(t));
             } else {
                 continue;
             }
         }
+        if (t.size() != 0 && t != "-") result.push_back(stoi(t));
         std::sort(result.begin(), result.end(), std::greater<int>());
         if (result.size() <= 3) return result;
         vector<int> ans;
@@ -42,9 +40,8 @@ class Solution {
 };
 
 int main() {
-    // 56 6 345 8
-    // a56b-6-8()_56!@$-a
-    string str = "a56b6()_345!@$8";
+    // string str = "a56b6()_345!@$8";
+    string str = "a56b-6-8()_56!@$-a";
     Solution s;
     vector<int> ans = s.GetTopThreeNum(str);
     for (auto i : ans) {

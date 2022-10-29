@@ -19,11 +19,7 @@ class Solution {
 
             } else if (t.size() > 0 && t != "-") {
                 result.push_back(stoi(t));
-                if (str[i] == '-') {
-                    t = "-";
-                } else {
-                    t = "";
-                }
+                t = str[i] == '-' ? "-" : "";
             } else {
                 continue;
             }
@@ -40,8 +36,8 @@ class Solution {
 };
 
 int main() {
-    // string str = "a56b6()_345!@$8";
-    string str = "a56b-6-8()_56!@$-a";
+    string str = "a56b6()_345!@$8";
+    // string str = "a56b-6-8()_56!@$-a";
     Solution s;
     vector<int> ans = s.GetTopThreeNum(str);
     for (auto i : ans) {

@@ -25,13 +25,26 @@
 - [ ] Contains Duplicate.
 - [ ] Product of Array Except Self.
 
+## Bitwise
+
+### :heavy_check_mark: Study Bit Manipulation.
+
+- [x] Bitwise operator.
+- [ ] words.
+- [ ] 1s Complement.
+- [ ] 2s Complement.
+
+### Bitwise algorithm practice questions:
+
+- [x] Single Number.
+
 ## Tree
 
 ### :heavy_check_mark: Binary Search Tree Implementation.
 
 - [x] `BinarySearchTree::insert()`            - insert a new node in BST.
 - [x] `BinarySearchTree::remove()`            - remove a node from BST.
-- [x] `BinarySearchTree::traverse()`          - traverse BST in preorder.
+- [x] `BinarySearchTree::traverse()`          - traverse BST in DFS-in/pre/postorder and BFS.
 - [x] `BinarySearchTree::print()`             - print all nodes and its parents info.
 - [x] `BinarySearchTree::count()`             - count of nodes.
 - [x] `BinarySearchTree::getMax()`            - max number in BST.

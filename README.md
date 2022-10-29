@@ -36,7 +36,14 @@
 
 ### Bitwise algorithm practice questions:
 
+- [ ] Insertion.
+- [ ] Binary to String.
+- [ ] Flip Bit to Win.
+
+### Blind 75:
+
 - [x] Single Number.
+- [x] Number of 1 Bits.
 
 ## Tree
 

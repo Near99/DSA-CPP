@@ -13,9 +13,9 @@ class Solution {
      * Two facts are: x^x=0, x^0s=x;
      * So the tricks are clear, the input array contains a bunch of duplicates
      * except for one element which means these elements XOR together is gonna
-     * be 0 (first fact: x^x=0). After we went through these duplicates there's
-     * only one unique number left, therefore we get to the answer (second fact:
-     * x^0s=x).
+     * be 0 (first fact: x^x=0). After we went through these duplicates there
+     * would be only one unique number left, therefore we get to the answer
+     * (second fact: x^0s=x).
      *
      * @return int Answer.
      */

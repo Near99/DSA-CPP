@@ -9,6 +9,7 @@ using namespace std;
 
 int main() {
     BinarySearchTree tree;
+    TraversalMethod m = dfs_inorder;
     vector<int> v = {10, 5, 15, 2, 3, 4, 9, 13, 22, 1, 14, 19};
     vector<int> p = {120, 105, 125, 12, 99, 131, 222, 1872, 140};
     assert(tree.isEmpty() == true);
@@ -20,6 +21,7 @@ int main() {
     cout << "Min: " << tree.getMin() << endl;
     cout << "Height: " << tree.getHeight() << endl;
     cout << "Valid? : " << tree.isValid() << endl;
+    tree.traverse(m);
     for (int n : v) {
         assert(tree.contain(n) == true);
     }

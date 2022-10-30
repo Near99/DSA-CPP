@@ -17,6 +17,7 @@
 - [ ] Rotate Matrix.
 - [ ] Zero Matrix.
 - [ ] String Rotation.
+- [x] Validate Subsequence.
 
 ### Blind 75:
 
@@ -81,3 +82,4 @@
 - [x] Valid BST.
 - [ ] Binary Tree Maximum Path Sum.
 - [ ] Binary Tree Level Order Traversal.
+- [x] Kth Smallest Element in a BST.

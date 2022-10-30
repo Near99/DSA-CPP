@@ -44,6 +44,11 @@
 
 - [x] Single Number.
 - [x] Number of 1 Bits.
+- [ ] Sum of Two Integers.
+- [ ] Numebr of 1 Bits.
+- [ ] Counting Bits.
+- [ ] Missing Number.
+- [ ] Reverse Bits.
 
 ## Tree
 
@@ -65,7 +70,6 @@
 ### BST algorithm practice questions:
 
 - [x] Find Closet Value In BST.
-- [x] Valid BST.
 - [x] Delete Node In BST.
 - [x] Inorder Successor In BST.
 
@@ -74,5 +78,6 @@
 - [x] Maximum Depth of Binary Tree.
 - [x] Same Tree.
 - [x] Invert Binary Tree.
+- [x] Valid BST.
 - [ ] Binary Tree Maximum Path Sum.
 - [ ] Binary Tree Level Order Traversal.

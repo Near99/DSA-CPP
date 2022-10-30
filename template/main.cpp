@@ -16,7 +16,6 @@ class Solution {
                 t += str[i];
             } else if (str[i] == 45 && t.size() == 0) {
                 t += str[i];
-
             } else if (t.size() > 0 && t != "-") {
                 result.push_back(stoi(t));
                 t = str[i] == '-' ? "-" : "";

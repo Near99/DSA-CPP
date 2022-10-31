@@ -42,7 +42,7 @@ class PriorityQueue {
     int capacity_;
     int size_;
 
-    void heapify();
+    void heapify_(int* arr, int i, int n);
 
     void siftUp_(int index);
 
@@ -84,6 +84,36 @@ int pq::PriorityQueue::size() { return size_; }
 bool pq::PriorityQueue::empty() { return size_ == 0; }
 
 bool pq::PriorityQueue::full() { return size_ == capacity_; }
+
+void pq::PriorityQueue::heapSort(int* arr, int n) {
+    for (int i = (n / 2) - 1; i >= 0; i--) {
+        heapify_(arr, i, n);
+    }
+    for (int i = n - 1; i > 0; i--) {
+        int temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+        heapify_(arr, 0, i);
+    }
+}
+
+void pq::PriorityQueue::heapify_(int* arr, int index, int n) {
+    int max = index;
+    for (int i = 1; i <= 2; i++) {
+        int c = (2 * index) + i;
+        if (c < n) {
+            if (arr[max] < arr[c]) {
+                max = c;
+            }
+        }
+    }
+    if (max != index) {
+        int temp = arr[max];
+        arr[max] = arr[index];
+        arr[index] = temp;
+        heapify_(arr, max, n);
+    }
+}
 
 void pq::PriorityQueue::siftUp_(int index) {
     if (index == 0) return;

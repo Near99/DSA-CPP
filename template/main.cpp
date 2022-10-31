@@ -1,3 +1,5 @@
+#include <assert.h>
+
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -5,7 +7,6 @@
 
 using namespace std;
 
-// from 48 - 57;
 class Solution {
    public:
     vector<int> GetTopThreeNum(string str) {
@@ -35,12 +36,19 @@ class Solution {
 };
 
 int main() {
-    string str = "a56b6()_345!@$8";
-    // string str = "a56b-6-8()_56!@$-a";
+    string input_str1 = "a56b6()_345!@$8";
+    vector<int> res_1 = {345, 56, 8};
+    string input_str2 = "a56b-6-8()_56!@$-a";
+    vector<int> res_2 = {56, 56, -6};
     Solution s;
-    vector<int> ans = s.GetTopThreeNum(str);
-    for (auto i : ans) {
-        std::cout << i << std::endl;
+    vector<int> ans;
+    ans = s.GetTopThreeNum(input_str1);
+    for (int i = 0; i < res_1.size(); i++) {
+        assert(ans[i] == res_1[i]);
+    }
+    ans = s.GetTopThreeNum(input_str2);
+    for (int i = 0; i < res_2.size(); i++) {
+        assert(ans[i] == res_2[i]);
     }
     return 0;
 }

@@ -5,7 +5,12 @@
 
 namespace pq {
 /**
- * @brief indices calculation formula.
+ * @brief So max-heap is normally used for ascending and min-heap for descending
+ * due to its nature. max-heap for descending sort has to call extract function
+ * and store the value into a new array, same way for ascending with min-heap.
+ * heapify_ and siftDown_ are duplicates because I suck at coding.
+ *
+ * Indices calculation formula:
  * heapify starting index: (n/2)-1
  * children: 2i+1, 2i+2
  * parent: (i-1)/2
@@ -31,11 +36,7 @@ class PriorityQueue {
 
     void heapSort(int* arr, int n);
 
-    void print() {
-        for (int i = 0; i < size_; i++) {
-            std::cout << queue_[i] << std::endl;
-        }
-    }
+    void print();
 
    private:
     int* queue_;
@@ -97,6 +98,12 @@ void pq::PriorityQueue::heapSort(int* arr, int n) {
     }
 }
 
+void pq::PriorityQueue::print() {
+    for (int i = 0; i < size_; i++) {
+        std::cout << queue_[i] << std::endl;
+    }
+}
+
 void pq::PriorityQueue::heapify_(int* arr, int index, int n) {
     int max = index;
     for (int i = 1; i <= 2; i++) {
@@ -129,10 +136,10 @@ void pq::PriorityQueue::siftUp_(int index) {
 void pq::PriorityQueue::siftDown_(int index) {
     int max = index;
     for (int i = 1; i <= 2; i++) {
-        int c = (2 * index) + i;
-        if (c < size_) {
-            if (queue_[max] < queue_[c]) {
-                max = c;
+        int child = (2 * index) + i;
+        if (child < size_) {
+            if (queue_[max] < queue_[child]) {
+                max = child;
             }
         }
     }

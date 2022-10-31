@@ -107,10 +107,10 @@ void pq::PriorityQueue::print() {
 void pq::PriorityQueue::heapify_(int* arr, int index, int n) {
     int max = index;
     for (int i = 1; i <= 2; i++) {
-        int c = (2 * index) + i;
-        if (c < n) {
-            if (arr[max] < arr[c]) {
-                max = c;
+        int child = (2 * index) + i;
+        if (child < n) {
+            if (arr[max] < arr[child]) {
+                max = child;
             }
         }
     }

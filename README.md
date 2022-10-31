@@ -102,3 +102,9 @@
 - [x] `PriorityQueue::siftDown_()`            - sift element down.
 
 ## Sorting
+
+- [ ] Insertion Sort.
+- [ ] Selection Sort.
+- [ ] Heap Sort.
+- [ ] Quick Sort.
+- [ ] Merge Sort.

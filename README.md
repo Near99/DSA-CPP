@@ -83,3 +83,22 @@
 - [ ] Binary Tree Maximum Path Sum.
 - [ ] Binary Tree Level Order Traversal.
 - [x] Kth Smallest Element in a BST.
+
+## Priority Queue && Binary Heap
+
+### :heavy_check_mark: Priority Queue Implementation with Max Heap.
+
+- [x] `PriorityQueue::insert()`               - insert a new element to the queue.
+- [x] `PriorityQueue::max()`                  - get the max element.
+- [x] `PriorityQueue::extractMax()`           - remove the max element and return it.
+- [x] `PriorityQueue::capacity()`             - queue capacity.
+- [x] `PriorityQueue::size()`                 - current size of the queue.
+- [x] `PriorityQueue::empty()`                - if queue is empty.
+- [x] `PriorityQueue::full()`                 - if queue is full.
+- [x] `PriorityQueue::heapSort()`             - take an array as input and sort it in place.
+- [x] `PriorityQueue::print()`                - print all queue elements.
+- [x] `PriorityQueue::heapify_()`             - helper for heapSort().
+- [x] `PriorityQueue::siftUp_()`              - sift element up.
+- [x] `PriorityQueue::siftDown_()`            - sift element down.
+
+## Sorting

@@ -13,10 +13,10 @@ int main() {
         q.insert(intput_arr[i]);
     }
     assert(q.empty() == false && q.full() == true);
-    for (int i = 0; i < 2; i++) {
-        q.extractMax();
+    q.heapSort(intput_arr, Q_CAP);
+    for (int i = 0; i < 10; i++) {
+        std::cout << intput_arr[i] << std::endl;
     }
-    q.print();
 
     return 0;
 }

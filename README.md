@@ -105,6 +105,6 @@
 
 - [ ] Insertion Sort.
 - [ ] Selection Sort.
-- [ ] Heap Sort.
+- [x] Heap Sort.
 - [ ] Quick Sort.
 - [ ] Merge Sort.

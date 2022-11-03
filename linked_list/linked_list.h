@@ -22,6 +22,8 @@ class LinkedList {
    public:
     LinkedList() : head_(nullptr) {}
 
+    ~LinkedList();
+
     void insertFront(const T value);
 
     void insertBack(const T value);
@@ -31,6 +33,8 @@ class LinkedList {
     Node<T> removeFront();
 
     Node<T> removeEnd();
+
+    void erase();
 
     void reverse();
 
@@ -51,8 +55,21 @@ class LinkedList {
 
     Node<T> remove_end_(Node<T>** head);
 
+    void erase_(Node<T>** head);
+
     void reverse_(Node<T>** head);
 };
+
+template <class T>
+ll::LinkedList<T>::~LinkedList() {
+    Node<T>*pre = nullptr, *curr = head_;
+    while (curr != nullptr) {
+        pre = curr;
+        curr = curr->next_;
+        delete pre;
+    }
+    delete head_;
+}
 
 template <class T>
 void ll::LinkedList<T>::insertFront(const T value) {
@@ -82,6 +99,11 @@ void ll::LinkedList<T>::reverse() {
 template <class T>
 bool ll::LinkedList<T>::empty() const {
     return head_ == nullptr;
+}
+
+template <class T>
+void ll::LinkedList<T>::erase() {
+    erase_(&head_);
 }
 
 template <class T>
@@ -158,6 +180,17 @@ Node<T> ll::LinkedList<T>::remove_end_(Node<T>** head) {
     node = *node_to_delete;
     delete node_to_delete;
     return node;
+}
+
+template <class T>
+void ll::LinkedList<T>::erase_(Node<T>** head) {
+    Node<T>*pre = nullptr, *curr = (*head);
+    while (curr != nullptr) {
+        pre = curr;
+        curr = curr->next_;
+        delete pre;
+    }
+    (*head) = nullptr;
 }
 
 template <class T>

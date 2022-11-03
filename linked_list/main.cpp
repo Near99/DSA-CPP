@@ -14,8 +14,17 @@ int main() {
         list.insertFront((char)i);
     }
     list.reverse();
-    list.print();
-    assert(list.empty() == false);
-    assert(list.size() == 26);
+    for (int i = 97; i <= 122; i++) {
+        assert(list.removeFront().value_ == (char)i);
+    }
+    for (int i = 97; i <= 122; i++) {
+        list.insertBack((char)i);
+    }
+    list.reverse();
+    for (int i = 97; i <= 122; i++) {
+        assert(list.removeEnd().value_ == (char)i);
+    }
+    assert(list.empty() == true);
+    assert(list.size() == 0);
     return 0;
 }

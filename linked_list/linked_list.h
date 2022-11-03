@@ -10,6 +10,7 @@ template <class T>
 class Node {
    public:
     Node(const T& value) : value_(value), next_(nullptr) {}
+    Node() : value_(0), next_(nullptr) {}
     ~Node() {}
 
     T value_;
@@ -44,12 +45,33 @@ class LinkedList {
 
     void insert_front_(Node<T>** head, const T value);
 
+    void insert_back_(Node<T>** head, const T value);
+
+    Node<T> remove_front_(Node<T>** head);
+
+    Node<T> remove_end_(Node<T>** head);
+
     void reverse_(Node<T>** head);
 };
 
 template <class T>
 void ll::LinkedList<T>::insertFront(const T value) {
     insert_front_(&head_, value);
+}
+
+template <class T>
+void ll::LinkedList<T>::insertBack(const T value) {
+    insert_back_(&head_, value);
+}
+
+template <class T>
+Node<T> ll::LinkedList<T>::removeFront() {
+    return remove_front_(&head_);
+}
+
+template <class T>
+Node<T> ll::LinkedList<T>::removeEnd() {
+    return remove_end_(&head_);
 }
 
 template <class T>
@@ -64,10 +86,10 @@ bool ll::LinkedList<T>::empty() const {
 
 template <class T>
 void ll::LinkedList<T>::print() {
-    Node<T>* h = head_;
-    while (h != nullptr) {
-        std::cout << h->value_ << std::endl;
-        h = h->next_;
+    Node<T>* curr = head_;
+    while (curr != nullptr) {
+        std::cout << curr->value_ << std::endl;
+        curr = curr->next_;
     }
 }
 
@@ -86,6 +108,56 @@ void ll::LinkedList<T>::insert_front_(Node<T>** head, const T value) {
     Node<T>* new_node = new Node<T>(value);
     new_node->next_ = (*head);
     (*head) = new_node;
+}
+
+template <class T>
+void ll::LinkedList<T>::insert_back_(Node<T>** head, const T value) {
+    Node<T>* new_node = new Node<T>(value);
+    if ((*head) == nullptr) {
+        (*head) = new_node;
+        return;
+    }
+    while ((*head)->next_ != nullptr) {
+        head = &(*head)->next_;
+    }
+    (*head)->next_ = new_node;
+}
+
+template <class T>
+Node<T> ll::LinkedList<T>::remove_front_(Node<T>** head) {
+    if ((*head) == nullptr) {
+        std::cout << "Empty list!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    Node<T>* node_to_delete = (*head);
+    Node<T> node = *node_to_delete;
+    (*head) = (*head)->next_;
+    delete node_to_delete;
+    return node;
+}
+
+template <class T>
+Node<T> ll::LinkedList<T>::remove_end_(Node<T>** head) {
+    if ((*head) == nullptr) {
+        std::cout << "Empty list!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    Node<T>*node_to_delete = (*head), *pre = nullptr;
+    Node<T> node;
+    if ((*head)->next_ == nullptr) {
+        (*head) = (*head)->next_;
+        node = *node_to_delete;
+        delete node_to_delete;
+        return node;
+    }
+    while (node_to_delete->next_ != nullptr) {
+        pre = node_to_delete;
+        node_to_delete = node_to_delete->next_;
+    }
+    pre->next_ = node_to_delete->next_;
+    node = *node_to_delete;
+    delete node_to_delete;
+    return node;
 }
 
 template <class T>

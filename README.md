@@ -101,6 +101,20 @@
 - [x] `PriorityQueue::siftUp_()`              - sift element up.
 - [x] `PriorityQueue::siftDown_()`            - sift element down.
 
+## Linked List
+
+### :heavy_check_mark:: Singly Linked List Implementation.
+
+- [x] `LinkedList::insertFront()`             - insert a new element to the front.
+- [ ] `LinkedList::insertBack()`              - insert a new element to the end.
+- [ ] `LinkedList::remove()`                  - remove an element by value.
+- [ ] `LinkedList::removeFront()`             - remove the front element and return it.
+- [ ] `LinkedList::removeEnd()`               - remove the last element and return it.
+- [x] `LinkedList::reverse()`                 - reverse the list.
+- [ ] `LinkedList::print()`                   - print all nodes value.
+- [x] `LinkedList::empty()`                   - if list is empty.
+- [x] `LinkedList::size()`                    - count of element in the list.
+
 ## Sorting
 
 - [ ] Insertion Sort.

@@ -110,6 +110,7 @@
 - [ ] `LinkedList::remove()`                  - remove an element by value.
 - [x] `LinkedList::removeFront()`             - remove the front element and return it.
 - [x] `LinkedList::removeEnd()`               - remove the last element and return it.
+- [x] `LinkedList::erase()`                   - erase all elements.
 - [x] `LinkedList::reverse()`                 - reverse the list.
 - [x] `LinkedList::print()`                   - print all nodes value.
 - [x] `LinkedList::empty()`                   - if list is empty.

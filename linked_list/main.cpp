@@ -26,5 +26,11 @@ int main() {
     }
     assert(list.empty() == true);
     assert(list.size() == 0);
+    for (int i = 97; i <= 122; i++) {
+        list.insertFront((char)i);
+    }
+    list.erase();
+    assert(list.empty() == true);
+    assert(list.size() == 0);
     return 0;
 }

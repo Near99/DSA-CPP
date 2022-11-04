@@ -21,11 +21,15 @@ class BinarySearchTree {
    public:
     explicit BinarySearchTree() : _root(nullptr) {}
 
+    ~BinarySearchTree();
+
     void insert(int value);
 
     void remove(int value);
 
     void traverse(bst::TraversalMethod m);
+
+    void erase();
 
     void print();
 
@@ -53,6 +57,8 @@ class BinarySearchTree {
     void _remove(bst::Node** root, int target);
 
     void _remove_elegant(bst::Node** root, int target);
+
+    void _erase(bst::Node* root);
 
     void _print(bst::Node* root, bst::Node* parent);
 
@@ -83,6 +89,8 @@ class BinarySearchTree {
     bool _empty(bst::Node* root);
 };
 
+bst::BinarySearchTree::~BinarySearchTree() { erase(); }
+
 void bst::BinarySearchTree::insert(int value) { _insert(&_root, value); }
 
 void bst::BinarySearchTree::remove(int value) {
@@ -91,6 +99,11 @@ void bst::BinarySearchTree::remove(int value) {
 
 void bst::BinarySearchTree::traverse(TraversalMethod m) {
     _traversal_controller(m, _root);
+}
+
+void bst::BinarySearchTree::erase() {
+    _erase(_root);
+    _root = nullptr;
 }
 
 void bst::BinarySearchTree::print() { _print(_root, nullptr); }
@@ -182,6 +195,13 @@ void bst::BinarySearchTree::_remove_elegant(bst::Node** root, int target) {
             _remove_elegant(&(*root)->right, (*root)->value);
         }
     }
+}
+
+void bst::BinarySearchTree::_erase(bst::Node* root) {
+    if (root == nullptr) return;
+    _erase(root->left);
+    _erase(root->right);
+    delete root;
 }
 
 void bst::BinarySearchTree::_print(bst::Node* root, bst::Node* parent) {

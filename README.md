@@ -18,6 +18,7 @@
 - [ ] Zero Matrix.
 - [ ] String Rotation.
 - [x] Validate Subsequence.
+- [x] Minimum Size Subarray Sum.
 
 ### Blind 75:
 
@@ -124,3 +125,12 @@
 - [x] Heap Sort.
 - [ ] Quick Sort.
 - [ ] Merge Sort.
+
+## Graph
+
+### Graph representations
+
+- [ ] objects and pointers.
+- [ ] adjacency matrix.
+- [ ] adjacency list.
+- [ ] adjacency map.

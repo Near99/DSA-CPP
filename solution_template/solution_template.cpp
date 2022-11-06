@@ -1,3 +1,5 @@
+#include <assert.h>
+
 class Solution {
    public:
     void fn_name(int param) {
@@ -5,3 +7,5 @@ class Solution {
         return;
     }
 };
+
+int main() { return 0; }

@@ -23,7 +23,7 @@
 ### Blind 75:
 
 - [x] Two Number Sum.
-- [ ] Best Time to Buy and Sell Stock.
+- [x] Best Time to Buy and Sell Stock.
 - [ ] Contains Duplicate.
 - [ ] Product of Array Except Self.
 

@@ -139,3 +139,7 @@
 - [ ] adjacency matrix.
 - [ ] adjacency list.
 - [ ] adjacency map.
+
+## String
+
+- [x] Make The String Great. - LeetCode 1544.

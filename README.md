@@ -123,6 +123,11 @@
 - [x] `LinkedList::empty()`                   - if list is empty.
 - [x] `LinkedList::size()`                    - count of element in the list.
 
+### Linked List algorithm practice questions:
+
+- [x] Mergen Two Sorted Lists.
+- [x] Linked List Cycle.
+
 ## Sorting
 
 - [ ] Insertion Sort.

@@ -148,3 +148,4 @@
 ## String
 
 - [x] Make The String Great. - LeetCode 1544.
+- [x] Remove All Adjacent Duplicates In String. - LeetCode 1047.

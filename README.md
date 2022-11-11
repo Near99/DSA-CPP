@@ -81,7 +81,7 @@
 - [x] Delete Node In BST.
 - [x] Inorder Successor In BST.
 
-### Blind 75:
+### Blind and Grind 75:
 
 - [x] Maximum Depth of Binary Tree.
 - [x] Same Tree.
@@ -90,6 +90,7 @@
 - [ ] Binary Tree Maximum Path Sum.
 - [ ] Binary Tree Level Order Traversal.
 - [x] Kth Smallest Element in a BST.
+- [x] Balanced Binary Tree.
 
 ## Priority Queue && Binary Heap
 

@@ -91,6 +91,7 @@
 - [ ] Binary Tree Level Order Traversal.
 - [x] Kth Smallest Element in a BST.
 - [x] Balanced Binary Tree.
+- [ ] Lowest Common Ancestor of a Binary Search Tree
 
 ## Priority Queue && Binary Heap
 

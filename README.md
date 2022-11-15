@@ -142,10 +142,10 @@
 
 ### Graph representations
 
-- [ ] objects and pointers.
-- [ ] adjacency matrix.
-- [ ] adjacency list.
-- [ ] adjacency map.
+- [ ] Objects and Pointers.
+- [ ] Adjacency Matrix.
+- [ ] Adjacency List.
+- [ ] Adjacency Map.
 
 ## String
 

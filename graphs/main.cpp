@@ -1,3 +1,4 @@
+#include "adjacency_list.h"
 #include "adjacency_matrix.h"
 
 void matrix() {
@@ -26,7 +27,15 @@ void matrix() {
     g.bfs(4);
 }
 
+void list() {
+    gal::Graph g(true);
+    g.addEdge(1, 2);
+    g.addEdge(1, 3);
+    g.print();
+}
+
 int main() {
-    matrix();
+    // matrix();
+    list();
     return 0;
 }

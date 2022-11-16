@@ -1,6 +1,6 @@
-#include "adjacency_matrices.h"
+#include "adjacency_matrix.h"
 
-int main() {
+void matrix() {
     gam::Graph g(8);
     g.addEdge(0, 1);
     g.addEdge(1, 0);
@@ -24,5 +24,9 @@ int main() {
     g.addEdge(7, 5);
     g.print();
     g.bfs(4);
+}
+
+int main() {
+    matrix();
     return 0;
 }

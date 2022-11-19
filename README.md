@@ -88,7 +88,7 @@
 - [x] Invert Binary Tree.
 - [x] Valid BST.
 - [ ] Binary Tree Maximum Path Sum.
-- [ ] Binary Tree Level Order Traversal.
+- [x] Binary Tree Level Order Traversal.
 - [x] Kth Smallest Element in a BST.
 - [x] Balanced Binary Tree.
 - [x] Lowest Common Ancestor of a Binary Search Tree

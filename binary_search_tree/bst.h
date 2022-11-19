@@ -250,19 +250,11 @@ void bst::BinarySearchTree::_bfs(bst::Node* root) {
     std::queue<bst::Node*> queue;
     queue.push(root);
     while (queue.size()) {
-        bst::Node* current = queue.front();
+        auto current = queue.front();
         queue.pop();
         std::cout << current->value << std::endl;
-        if (current->left && current->right) {
-            queue.push(current->left);
-            queue.push(current->right);
-        } else if (current->left) {
-            queue.push(current->left);
-        } else if (current->right) {
-            queue.push(current->right);
-        } else {
-            continue;
-        }
+        if (current->left) queue.push(current->left);
+        if (current->right) queue.push(current->right);
     }
 }
 

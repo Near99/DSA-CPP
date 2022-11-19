@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     BinarySearchTree tree;
-    TraversalMethod m = dfs_inorder;
+    TraversalMethod m = bfs;
     vector<int> v = {10, 5, 15, 2, 3, 4, 9, 13, 22, 1, 14, 19};
     vector<int> p = {120, 105, 125, 12, 99, 131, 222, 1872, 140};
     assert(tree.isEmpty() == true);

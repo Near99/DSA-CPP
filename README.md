@@ -145,7 +145,7 @@
 - [x] Objects and Pointers.
 - [x] Adjacency Matrix.
 - [x] Adjacency List.
-- [ ] Adjacency Map.
+- [x] Adjacency Map.
 
 ## String
 

@@ -23,15 +23,28 @@ void matrix() {
     g.addEdge(6, 7);
     g.addEdge(7, 6);
     g.addEdge(7, 5);
-    g.print();
-    g.bfs(4);
+    // g.print();
+    for (int i = 0; i < 8; i++) {
+        g.bfs(i);
+    }
 }
 
 void list() {
     gal::Graph g(true);
-    g.addEdge(1, 2);
-    g.addEdge(1, 3);
-    g.print();
+    g.addEdge(2, 1);
+    g.addEdge(2, 3);
+    g.addEdge(1, 0);
+    g.addEdge(3, 5);
+    g.addEdge(3, 4);
+    g.addEdge(4, 6);
+    g.addEdge(5, 4);
+    g.addEdge(5, 6);
+    g.addEdge(5, 7);
+    g.addEdge(7, 6);
+    // g.print();
+    for (int i = 0; i < 10; i++) {
+        g.bfs(i);
+    }
 }
 
 int main() {

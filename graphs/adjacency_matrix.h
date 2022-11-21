@@ -42,7 +42,7 @@ class Graph {
         while (!verticesToBeVisited.empty()) {
             int v = verticesToBeVisited.front();
             verticesToBeVisited.pop();
-            std::cout << v << std::endl;
+            std::cout << v << ' ';
             for (int i = 0; i < adjacency_matrices[v].size(); i++) {
                 if (adjacency_matrices[v][i] == 1 &&
                     visited.find(i) == visited.end()) {
@@ -51,6 +51,7 @@ class Graph {
                 }
             }
         }
+        std::cout << std::endl;
     }
 
     void print() {

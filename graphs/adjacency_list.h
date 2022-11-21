@@ -34,10 +34,35 @@ class Graph {
         nedges_++;
     }
 
+    void bfs(int source) {
+        if (source < 0 || source >= max) {
+            std::cout << "Out of boundary!" << std::endl;
+        }
+        std::unordered_map<int, bool> map;
+        std::queue<int> queue;
+        map.insert({source, true}), queue.push(source);
+        while (!queue.empty()) {
+            std::cout << queue.front() << ' ';
+            if (edges_[queue.front()]) {
+                auto v = edges_[queue.front()];
+                while (v) {
+                    if (map.find(v->y) == map.end()) {
+                        queue.push(v->y);
+                        map.insert({v->y, true});
+                    }
+                    v = v->next;
+                }
+            }
+            queue.pop();
+        }
+        std::cout << std::endl;
+    }
+
     void print() {
-        for (auto edge : edges_) {
-            if (edge) {
-                auto temp_head = edge;
+        for (int i = 0; i < edges_.size(); i++) {
+            if (edges_[i]) {
+                std::cout << "Source: " << i << std::endl;
+                auto temp_head = edges_[i];
                 while (temp_head) {
                     std::cout << temp_head->y << std::endl;
                     temp_head = temp_head->next;
@@ -51,7 +76,7 @@ class Graph {
     int nedges_;
     int nvertices_;
     bool directed_;
-    std::vector<int> degree_;
+    std::vector<int> degree_;  // outdegree of each vertex
     std::vector<EdgeNode*> edges_;
 };
 

@@ -149,7 +149,8 @@
 
 ### Graph algorithm practice questions:
 
-- [x] Number of Islands.
+- [x] Number Of Islands.
+- [x] Cycle In Graph.
 
 ## String
 

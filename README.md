@@ -147,6 +147,10 @@
 - [x] Adjacency List.
 - [x] Adjacency Map.
 
+### Graph algorithm practice questions:
+
+- [x] Number of Islands.
+
 ## String
 
 - [x] Make The String Great. - LeetCode 1544.

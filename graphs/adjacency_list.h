@@ -34,28 +34,39 @@ class Graph {
         nedges_++;
     }
 
-    void bfs(int source) {
+    std::vector<int> bfs(int source, void (*callback)(int value)) {
         if (source < 0 || source >= max) {
             std::cout << "Out of boundary!" << std::endl;
         }
         std::unordered_map<int, bool> map;
         std::queue<int> queue;
+        std::vector<int> parent(max, -1);
         map.insert({source, true}), queue.push(source);
         while (!queue.empty()) {
-            std::cout << queue.front() << ' ';
+            callback(queue.front());
             if (edges_[queue.front()]) {
                 auto v = edges_[queue.front()];
                 while (v) {
                     if (map.find(v->y) == map.end()) {
                         queue.push(v->y);
                         map.insert({v->y, true});
+                        parent[v->y] = queue.front();
                     }
                     v = v->next;
                 }
             }
             queue.pop();
         }
-        std::cout << std::endl;
+        return parent;
+    }
+
+    void shortest_path(int start, int end, std::vector<int> parent) {
+        if (start == end || end == -1) {
+            std::cout << start << ' ';
+        } else {
+            shortest_path(start, parent[end], parent);
+            std::cout << end << ' ';
+        }
     }
 
     void print() {

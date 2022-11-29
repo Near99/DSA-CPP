@@ -1,6 +1,11 @@
 #include "adjacency_list.h"
 #include "adjacency_matrix.h"
 
+void cb(int value) {
+    // callback
+    // std::cout << value << std::endl;
+}
+
 void matrix() {
     gam::Graph g(8);
     g.addEdge(0, 1);
@@ -42,9 +47,8 @@ void list() {
     g.addEdge(5, 7);
     g.addEdge(7, 6);
     // g.print();
-    for (int i = 0; i < 10; i++) {
-        g.bfs(i);
-    }
+    auto parent = g.bfs(2, cb);
+    g.shortest_path(2, 0, parent);
 }
 
 int main() {

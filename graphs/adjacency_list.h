@@ -69,6 +69,8 @@ class Graph {
         }
     }
 
+    void dfs(int source) {}
+
     void print() {
         for (int i = 0; i < edges_.size(); i++) {
             if (edges_[i]) {

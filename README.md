@@ -116,7 +116,7 @@
 
 - [x] `LinkedList::insertFront()`             - insert a new element to the front.
 - [x] `LinkedList::insertBack()`              - insert a new element to the end.
-- [ ] `LinkedList::remove()`                  - remove an element by value.
+- [x] `LinkedList::remove()`                  - remove an element by value.
 - [x] `LinkedList::removeFront()`             - remove the front element and return it.
 - [x] `LinkedList::removeEnd()`               - remove the last element and return it.
 - [x] `LinkedList::erase()`                   - erase all elements.

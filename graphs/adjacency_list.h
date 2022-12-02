@@ -60,6 +60,12 @@ class Graph {
         return parent;
     }
 
+    std::vector<int> dfs(int source) {
+        std::vector<bool> visited(max, false);
+        std::vector<int> res;
+        return dfs_(source, visited, res);
+    }
+
     void shortest_path(int start, int end, std::vector<int> parent) {
         if (start == end || end == -1) {
             std::cout << start << ' ';
@@ -68,8 +74,6 @@ class Graph {
             std::cout << end << ' ';
         }
     }
-
-    void dfs(int source) {}
 
     void print() {
         for (int i = 0; i < edges_.size(); i++) {
@@ -91,6 +95,20 @@ class Graph {
     bool directed_;
     std::vector<int> degree_;  // outdegree of each vertex
     std::vector<EdgeNode*> edges_;
+
+    std::vector<int> dfs_(int source, std::vector<bool>& visited,
+                          std::vector<int>& res) {
+        visited[source] = true;
+        res.push_back(source);
+        auto v = edges_[source];
+        while (v) {
+            if (!visited[v->y]) {
+                dfs_(v->y, visited, res);
+            }
+            v = v->next;
+        }
+        return res;
+    }
 };
 
 }  // namespace gal

@@ -46,9 +46,13 @@ void list() {
     g.addEdge(5, 6);
     g.addEdge(5, 7);
     g.addEdge(7, 6);
-    // g.print();
+    auto i = g.dfs(2);
+    for (auto j : i) {
+        std::cout << j << ' ';
+    }
+    std::cout << std::endl;
     auto parent = g.bfs(2, cb);
-    g.shortest_path(2, 0, parent);
+    g.shortest_path(2, 7, parent);
 }
 
 int main() {

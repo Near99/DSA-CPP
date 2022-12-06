@@ -132,11 +132,11 @@
 
 ## Sorting
 
-- [ ] Insertion Sort.
-- [ ] Selection Sort.
+- [x] Insertion Sort.
+- [x] Selection Sort.
 - [x] Heap Sort.
 - [ ] Quick Sort.
-- [ ] Merge Sort.
+- [x] Merge Sort.
 
 ## Graph
 

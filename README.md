@@ -145,7 +145,6 @@
 - [x] Objects and Pointers.
 - [x] Adjacency Matrix.
 - [x] Adjacency List.
-- [x] Adjacency Map.
 
 ### Graph algorithm practice questions:
 

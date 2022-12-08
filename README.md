@@ -132,12 +132,12 @@
 
 ## Sorting
 
-- [x] Insertion Sort.
-- [x] Selection Sort.
-- [x] Heap Sort.
-- [x] Quick Sort.
-- [x] Merge Sort.
-
+- [x]  Bubble Sort                              - bubble sort,    Time: best: O(n),     average: O(n^2),   worst: O(n^2);   Space: O(1).    Stable.
+- [x]  Insertion Sort                           - insertion sort, Time: best: O(n),     average: O(n^2),   worst: O(n^2);   Space: O(1).    Stable.
+- [x]  Selection Sort                           - selection sort, Time: best: O(n^2),   average: O(n^2),   worst: O(n^2);   Space: O(1).    Not Stable.
+- [x]  Heap Sort                                - heap sort,      Time: best: O(nlogn), average: O(nlogn), worst: O(nlogn); Space: O(1).    Not Stable.
+- [x]  Merge Sort                               - merge sort,     Time: best: O(nlogn), average: O(nlogn), worst: O(nlogn); Space: O(n).    Stable.
+- [x]  Quick Sort                               - quick sort,     Time: best: O(nlogn), average: O(nlogn), worst: O(n^2);   Space: O(logn). Not Stable.
 ## Graph
 
 ### Graph representations

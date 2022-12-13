@@ -6,20 +6,6 @@
 
 - [x] Well, I don't think I will implement another Vector in CPP, but let's see ;).
 
-### Array algorithm practice questions:
-
-- [x] Is Unique.
-- [ ] Check Permutation.
-- [ ] URLify.
-- [ ] Palindrome Permutation.
-- [ ] One Away.
-- [ ] String Compression.
-- [ ] Rotate Matrix.
-- [ ] Zero Matrix.
-- [ ] String Rotation.
-- [x] Validate Subsequence.
-- [x] Minimum Size Subarray Sum.
-
 ### Blind 75:
 
 - [x] Two Number Sum.
@@ -40,12 +26,6 @@
 - [ ] words.
 - [ ] 1s Complement.
 - [ ] 2s Complement.
-
-### Bitwise algorithm practice questions:
-
-- [ ] Insertion.
-- [ ] Binary to String.
-- [ ] Flip Bit to Win.
 
 ### Blind 75:
 
@@ -74,12 +54,6 @@
 - [x] `BinarySearchTree::isValid()`           - if BST is valid.
 - [x] `BinarySearchTree::contain()`           - if contain the target element.
 - [x] `BinarySearchTree::isEmpty()`           - if tree is empty.
-
-### BST algorithm practice questions:
-
-- [x] Find Closet Value In BST.
-- [x] Delete Node In BST.
-- [x] Inorder Successor In BST.
 
 ### Blind and Grind 75:
 
@@ -132,12 +106,13 @@
 
 ## Sorting
 
-- [x]  Bubble Sort                              - bubble sort,    Time: best: O(n),     average: O(n^2),   worst: O(n^2);   Space: O(1).    Stable.
-- [x]  Insertion Sort                           - insertion sort, Time: best: O(n),     average: O(n^2),   worst: O(n^2);   Space: O(1).    Stable.
-- [x]  Selection Sort                           - selection sort, Time: best: O(n^2),   average: O(n^2),   worst: O(n^2);   Space: O(1).    Not Stable.
-- [x]  Heap Sort                                - heap sort,      Time: best: O(nlogn), average: O(nlogn), worst: O(nlogn); Space: O(1).    Not Stable.
-- [x]  Merge Sort                               - merge sort,     Time: best: O(nlogn), average: O(nlogn), worst: O(nlogn); Space: O(n).    Stable.
-- [x]  Quick Sort                               - quick sort,     Time: best: O(nlogn), average: O(nlogn), worst: O(n^2);   Space: O(logn). Not Stable.
+- [x]  Bubble Sort                            - bubble sort,    Time: best: O(n),     average: O(n^2),   worst: O(n^2);   Space: O(1).    Stable.
+- [x]  Insertion Sort                         - insertion sort, Time: best: O(n),     average: O(n^2),   worst: O(n^2);   Space: O(1).    Stable.
+- [x]  Selection Sort                         - selection sort, Time: best: O(n^2),   average: O(n^2),   worst: O(n^2);   Space: O(1).    Not Stable.
+- [x]  Heap Sort                              - heap sort,      Time: best: O(nlogn), average: O(nlogn), worst: O(nlogn); Space: O(1).    Not Stable.
+- [x]  Merge Sort                             - merge sort,     Time: best: O(nlogn), average: O(nlogn), worst: O(nlogn); Space: O(n).    Stable.
+- [x]  Quick Sort                             - quick sort,     Time: best: O(nlogn), average: O(nlogn), worst: O(n^2);   Space: O(logn). Not Stable.
+
 ## Graph
 
 ### Graph representations

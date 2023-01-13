@@ -74,8 +74,4 @@
 - [x] Objects and Pointers.
 - [x] Adjacency Matrix.
 - [x] Adjacency List.
-
-### Graph algorithm practice questions:
-
-- [x] Number Of Islands.
-- [x] Cycle In Graph.
+- [ ] Re-do graphs.
